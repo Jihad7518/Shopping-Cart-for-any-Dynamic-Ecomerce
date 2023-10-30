@@ -1,4 +1,3 @@
-
 import { useSelector } from "react-redux";
 import CartItem from "../components/CartItem";
 import { Link } from "react-router-dom";
@@ -14,6 +13,7 @@ const Cart = () => {
   useEffect( () => {
     setTotalAmount(cart.reduce( (acc, curr) => acc + curr.price, 0) );
   }, [cart])
+
 
   return (
       <div className="w-screen">
@@ -66,3 +66,13 @@ const Cart = () => {
                 Shop Now
               </button>
           </Link>
+          </div>
+         </div>
+        </div>)
+      }
+
+      </div>
+    );
+};
+
+export default Cart;
