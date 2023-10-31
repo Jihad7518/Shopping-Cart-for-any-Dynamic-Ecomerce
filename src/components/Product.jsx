@@ -1,4 +1,3 @@
-
 import { toast } from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
@@ -18,6 +17,7 @@ const Product = ({post}) => {
     dispatch(remove(post.id));
     toast.error("Item Romoved From Cart");
   }
+
 
   return (
     <div className="flex flex-col items-center justify-between
@@ -41,3 +41,23 @@ const Product = ({post}) => {
       {
         cart.some( (p) => p.id == post.id) ? 
         (<button
+        className="text-gray-700 border-2 border-gray-700 rounded-full font-semibold
+        text-[12px] p-1 px-3 uppercase hover:bg-gray-700
+        transition duration-300 ease-in hover:text-white"
+         onClick={removeFromCart}>
+          Remove Item
+        </button>) : 
+        (<button
+        className="text-gray-700 border-2 border-gray-700 rounded-full font-semibold
+        text-[12px] p-1 px-3 uppercase hover:bg-gray-700
+        transition duration-300 ease-in hover:text-white"
+         onClick={addToCart}>
+          Add to Cart
+        </button>)
+      }
+      </div>
+    </div>
+  );
+};
+
+export default Product;
